@@ -5,3 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("robot/mira_description")
+subdirs("robot/mira_picker")
+subdirs("robot/robotiq_2f_140_gripper_visualization")
+subdirs("robot/realsense2_description")
+subdirs("edge_detection")

@@ -44,6 +44,19 @@ sudo apt install git-lfs
 git lfs install
 ```
 
+
+#### OpenCV
+Install in C++ with the following command
+```
+sudo apt update
+sudo apt install libopencv-dev
+```
+
+Check installation
+```
+pkg-config --modversion opencv4
+```
+
 ## Execution Instructions
 
 To launch the robot description and bag file:
@@ -59,3 +72,26 @@ To launch the robot description and bag file:
     # Terminal 3
     rosbag play --clock -l data/withpointcloud.bag
     ```
+
+### 1. Basic
+
+```
+cd ~/catkin_ws  # catkin_ws path
+catkin_make # compile package
+source devel/setup.bash # source
+rosrun edge_detection edge_detection_bin # run the code
+```
+
+#### Concept Description
+We need a algorithm which is scale and rotation invariant. Also, it should be robust to noise.
+Thus we remove noise with gaussian blur and apply Canny Edge detection. The Canny Edge Detector is a multi-stage algorithm used for edge detection in images, 
+known for its ability to detect a wide range of edges while minimizing noise. It is commonly used because it provides good localization of edges and is computationally efficient.
+
+#### Implementation 
+1. We read the image
+2. Prepare image for edge detection by convert to grayscale.
+3. Appply Gaussian Blur to remove noise.
+4. Apply Canny Edge detection.
+5. Superimpose the detected edges on original image and return it.
+
+### 2.

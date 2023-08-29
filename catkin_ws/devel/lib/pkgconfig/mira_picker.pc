@@ -1,0 +1,8 @@
+prefix=/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel
+
+Name: mira_picker
+Description: Description of mira_picker
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

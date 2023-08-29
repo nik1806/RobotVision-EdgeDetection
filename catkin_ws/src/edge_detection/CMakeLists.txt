@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+find_package(OpenCV REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -117,6 +118,7 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 file(GLOB_RECURSE CPP_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -128,7 +130,8 @@ include_directories(
 set(SOURCES ${CPP_FILES})
 add_library(TARGET_NAME SHARED ${SOURCES})
 target_include_directories(TARGET_NAME PUBLIC ${INCLUDE_DIRECTORIES} )
-target_link_libraries(TARGET_NAME ) # fill this up with the dependencies you want for eg opencv
+target_link_libraries(TARGET_NAME ${OpenCV_LIBS}) # fill this up with the dependencies you want for eg opencv
+# target_link_libraries(your_executable ${OpenCV_LIBS}) src/EdgeDetector.cpp
 
 add_executable(edge_detection_bin src/EdgeDetector.cpp )
 target_include_directories(edge_detection_bin PUBLIC ${INCLUDE_DIRECTORIES} )

@@ -131,6 +131,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/mira_description/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/mira_picker/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/robotiq_2f_140_gripper_visualization/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/realsense2_description/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/edge_detection/cmake_install.cmake")
 
 endif()
 

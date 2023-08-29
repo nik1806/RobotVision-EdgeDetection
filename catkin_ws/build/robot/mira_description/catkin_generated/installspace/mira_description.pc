@@ -1,0 +1,8 @@
+prefix=/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/install
+
+Name: mira_description
+Description: Description of mira_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

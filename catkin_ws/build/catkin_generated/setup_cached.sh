@@ -8,7 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/usr/local/gcc-10.1.0/lib64:/usr/local/gcc-10.1.0/lib64:/usr/local/cuda/lib64:/usr/local/cuda/lib64'
+export LD_LIBRARY_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
 export PWD='/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/src:$ROS_PACKAGE_PATH"
