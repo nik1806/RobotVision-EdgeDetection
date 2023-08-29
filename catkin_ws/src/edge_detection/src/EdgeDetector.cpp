@@ -44,7 +44,7 @@ int main()
     // Create the executable for testing the code here
 
 	// Read an image
-    cv::Mat inputImage = cv::imread("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/src/edge_detection/data/Image_1.png");
+    cv::Mat inputImage = cv::imread("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/src/edge_detection/data/Image_4.png");
 	// std::string packagePath = ros::package::getPath("edge_detection");
 	// std::string imagePath = packagePath + "/data/Image_1.png";
 	// cv::Mat inputImage = cv::imread(imagePath);

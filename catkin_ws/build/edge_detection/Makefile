@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -196,6 +196,21 @@ geometry_msgs_generate_messages_py: edge_detection/CMakeFiles/geometry_msgs_gene
 geometry_msgs_generate_messages_py/fast:
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make edge_detection/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+edge_detection/CMakeFiles/edge_detection_lib.dir/rule:
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 edge_detection/CMakeFiles/edge_detection_lib.dir/rule
+.PHONY : edge_detection/CMakeFiles/edge_detection_lib.dir/rule
+
+# Convenience name for target.
+edge_detection_lib: edge_detection/CMakeFiles/edge_detection_lib.dir/rule
+
+.PHONY : edge_detection_lib
+
+# fast build rule for target.
+edge_detection_lib/fast:
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_lib.dir/build.make edge_detection/CMakeFiles/edge_detection_lib.dir/build
+.PHONY : edge_detection_lib/fast
 
 # Convenience name for target.
 edge_detection/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -353,6 +368,7 @@ src/EdgeDetector.o: src/EdgeDetector.cpp.o
 
 # target to build an object file
 src/EdgeDetector.cpp.o:
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_lib.dir/build.make edge_detection/CMakeFiles/edge_detection_lib.dir/src/EdgeDetector.cpp.o
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/TARGET_NAME.dir/build.make edge_detection/CMakeFiles/TARGET_NAME.dir/src/EdgeDetector.cpp.o
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_bin.dir/build.make edge_detection/CMakeFiles/edge_detection_bin.dir/src/EdgeDetector.cpp.o
 .PHONY : src/EdgeDetector.cpp.o
@@ -363,6 +379,7 @@ src/EdgeDetector.i: src/EdgeDetector.cpp.i
 
 # target to preprocess a source file
 src/EdgeDetector.cpp.i:
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_lib.dir/build.make edge_detection/CMakeFiles/edge_detection_lib.dir/src/EdgeDetector.cpp.i
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/TARGET_NAME.dir/build.make edge_detection/CMakeFiles/TARGET_NAME.dir/src/EdgeDetector.cpp.i
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_bin.dir/build.make edge_detection/CMakeFiles/edge_detection_bin.dir/src/EdgeDetector.cpp.i
 .PHONY : src/EdgeDetector.cpp.i
@@ -373,6 +390,7 @@ src/EdgeDetector.s: src/EdgeDetector.cpp.s
 
 # target to generate assembly for a file
 src/EdgeDetector.cpp.s:
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_lib.dir/build.make edge_detection/CMakeFiles/edge_detection_lib.dir/src/EdgeDetector.cpp.s
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/TARGET_NAME.dir/build.make edge_detection/CMakeFiles/TARGET_NAME.dir/src/EdgeDetector.cpp.s
 	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build && $(MAKE) -f edge_detection/CMakeFiles/edge_detection_bin.dir/build.make edge_detection/CMakeFiles/edge_detection_bin.dir/src/EdgeDetector.cpp.s
 .PHONY : src/EdgeDetector.cpp.s
@@ -385,9 +403,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install/local"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... edge_detection_lib"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... install/strip"
@@ -399,7 +419,6 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... test"
 	@echo "... TARGET_NAME"
 	@echo "... edge_detection_bin"
 	@echo "... src/EdgeDetector.o"

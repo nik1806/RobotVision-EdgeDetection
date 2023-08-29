@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/bui
 include robot/realsense2_description/CMakeFiles/clean_test_results_realsense2_description.dir/progress.make
 
 robot/realsense2_description/CMakeFiles/clean_test_results_realsense2_description:
-	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/realsense2_description && /home/nikhil/miniconda3/envs/light/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/test_results/realsense2_description
+	cd /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/realsense2_description && /home/nikhil/miniconda3/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/test_results/realsense2_description
 
 clean_test_results_realsense2_description: robot/realsense2_description/CMakeFiles/clean_test_results_realsense2_description
 clean_test_results_realsense2_description: robot/realsense2_description/CMakeFiles/clean_test_results_realsense2_description.dir/build.make

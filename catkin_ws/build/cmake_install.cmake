@@ -136,6 +136,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/robotiq_2f_140_gripper_visualization/cmake_install.cmake")
   include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/robot/realsense2_description/cmake_install.cmake")
   include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/edge_detection/cmake_install.cmake")
+  include("/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/edge_detection_service/cmake_install.cmake")
 
 endif()
 

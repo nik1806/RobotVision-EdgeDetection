@@ -137,6 +137,11 @@ add_executable(edge_detection_bin src/EdgeDetector.cpp )
 target_include_directories(edge_detection_bin PUBLIC ${INCLUDE_DIRECTORIES} )
 target_link_libraries(edge_detection_bin TARGET_NAME)
 
+# creating a library to use again in other packages
+add_library(edge_detection_lib src/EdgeDetector.cpp)
+target_link_libraries(edge_detection_lib ${catkin_LIBRARIES})
+
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/edge_detection.cpp

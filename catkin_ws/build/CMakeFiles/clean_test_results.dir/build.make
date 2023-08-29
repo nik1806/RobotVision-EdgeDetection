@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/bui
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/home/nikhil/miniconda3/envs/light/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/test_results
+	/home/nikhil/miniconda3/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make

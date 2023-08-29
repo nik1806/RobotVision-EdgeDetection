@@ -7,8 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH='/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig'
 export PWD='/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/home/paliwal/Desktop/RobotVision-EdgeDetection/catkin_ws/devel/lib/python3/dist-packages:$PYTHONPATH"

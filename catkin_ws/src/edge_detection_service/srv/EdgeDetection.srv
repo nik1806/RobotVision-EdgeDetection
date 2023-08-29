@@ -1,0 +1,2 @@
+sensor_msgs/Image input_image
+sensor_msgs/Image edge_image

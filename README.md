@@ -94,4 +94,62 @@ known for its ability to detect a wide range of edges while minimizing noise. It
 4. Apply Canny Edge detection.
 5. Superimpose the detected edges on original image and return it.
 
-### 2.
+###  2. Vision_ROS
+
+#### Implementation
+<!-- 1. Create a new ROS package called  'edge_detection_service'
+
+catkin_create_pkg edge_detection_service std_msgs sensor_msgs rospy roscpp -->
+
+Great to hear that you've completed the basic challenge! Now, let's move on to the second challenge, Vision_ROS. Here's a step-by-step guide to tackle this challenge:
+
+### Step 1: Create ROS .srv and .msg Files
+
+1. **Create a new ROS package** (if you haven't already) for your edge detection service.
+    ```bash
+    catkin_create_pkg edge_detection_service std_msgs sensor_msgs rospy roscpp
+    ```
+
+2. **Create a `.srv` file** for the edge detection service. Let's call it `EdgeDetection.srv` and place it in the `srv` folder of your package.
+    ```
+    # EdgeDetection.srv
+    sensor_msgs/Image input_image
+    ---
+    sensor_msgs/Image edge_image
+    ```
+
+3. **Create a `.msg` file** for the edge points. Let's call it `EdgePoint.msg` and place it in the `msg` folder of your package.
+    ```
+    # EdgePoint.msg
+    float64 x
+    float64 y
+    float64 z
+    ```
+
+4. **Modify your `CMakeLists.txt` and `package.xml`** to include the message generation and service generation steps.
+
+### Step 2: Implement the ROS Service
+
+1. We use the previous implementation of edge detection algorithm by modify edge_detection Package to create a library
+2. We modify edge_detection_service package to use the Library
+3. Create ROS Service in edge_detection_service
+<!-- 1. Implement the ROS service in C++ or Python that uses your edge detection algorithm. Use the `.srv` file you created for defining the service type. -->
+
+#### Test
+`rosservice call` or using a client
+
+
+### Step 3: Create a Client Example
+
+1. Create a ROS node that acts as a client to your service. This node should read image files from a directory, send them to the edge detection service, and receive the edge-detected images.
+
+### Step 4: Subscribe to Image Topic from ROS Bag
+
+1. Create a ROS node that subscribes to the image topic from the given ROS bag file.
+2. Use this node to send images to your edge detection service.
+3. Visualize the input and output images in RViz.
+
+### Step 5: Convert to 3D Data
+
+1. Use the depth images and camera parameters from the ROS bag file to convert the edge pixels to 3D coordinates (x, y, z).
+2. Publish these coordinates to a ROS topic named `edge_points` of type `sensor_msgs/PointCloud`.
