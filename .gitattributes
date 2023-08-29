@@ -1,0 +1,2 @@
+robot/mira_description/urdf/*.dae filter=lfs diff=lfs merge=lfs -text
+robot/mira_description/urdf/temp/mira.dae filter=lfs diff=lfs merge=lfs -text
