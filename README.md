@@ -6,7 +6,7 @@ Let's break down each task:
 ### Preliminary Requirements
 1. **Install ROS Noetic**: Make sure we have ROS Noetic installed on our system.
 2. **Create a catkin workspace**: Initialize a new catkin workspace or use an existing one.
-3. **Clone Repository**: Clone the challenge repository into the `src/` directory of wer workspace.
+3. **Clone Repository**: Clone the challenge repository into the `src/` directory of our workspace.
 4. **Download bagfiles**: Download the necessary ROS bag files from the shared directory.
 
 ### 1. Basic
@@ -35,7 +35,7 @@ Let's break down each task:
 - For RViz markers, we can use `visualization_msgs/Marker` to display points, lines, or other shapes.
 
 
-### Installation Instructions
+## Installation Instructions
 
 #### Git LFS 
 Due to presence of large files, I am using LFS because I want to keep all files in one place.
@@ -43,3 +43,19 @@ Due to presence of large files, I am using LFS because I want to keep all files 
 sudo apt install git-lfs
 git lfs install
 ```
+
+## Execution Instructions
+
+To launch the robot description and bag file:
+    ```
+    # Terminal 1
+    roscore
+
+    # Terminal 2
+    rosparam set /use_sim_time true
+    source catkin_ws/devel/setup.bash
+    roslaunch mira_picker display.launch gripper_name:=robotiq2f_140 publish_joint_state:=false publish_robot_state:=false
+
+    # Terminal 3
+    rosbag play --clock -l data/withpointcloud.bag
+    ```
